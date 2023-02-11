@@ -1,7 +1,7 @@
 export * from "./rest";
 export * from "./websockets";
 
-import restClient, { IRestClient } from "./rest";
+import { IRestClient, restClient } from "./rest";
 import websocketClient, { IWebsocketClient } from "./websockets";
 
 export interface IPolygonClient {

@@ -1,5 +1,5 @@
-import { restClient } from "@polygon.io/client-js";
-import { referenceClient } from "@polygon.io/client-js";
+import { restClient, referenceClient } from "../../../src/rest/index";
+
 
 // Headers required to use the Launchpad product.
 const edgeHeaders = {
@@ -10,9 +10,9 @@ const edgeHeaders = {
   // X-Polygon-Edge-User-Agent is an optional Launchpad header. It denotes the originating UserAgent of the Edge User requesting data.
   'X-Polygon-Edge-User-Agent': 'useragent'
 }
+const apiKey = "PH7GMMcqqxkwXb9EZ2KVFHlLKTaIcQ1F"
+const rest = restClient(apiKey, "https://api.polygon.io", edgeHeaders);
+rest.stock.previousClose("AAPL").then(/* your success handler */);
 
-const rest = restClient("api key", "https://api.polygon.io", edgeHeaders);
-rest.forex.previousClose("C:EURUSD").then(/* your success handler */);
-
-const reference = referenceClient("api key", "https://api.polygon.io", edgeHeaders);
+const reference = referenceClient(apiKey, "https://api.polygon.io", edgeHeaders);
 reference.tickers().then(/* your success handler */);

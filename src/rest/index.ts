@@ -26,4 +26,4 @@ export const restClient = (apiKey, apiBase?: string, headers?: IHeaders): IRestC
   stocks: stocksClient(apiKey, apiBase, headers),
 });
 
-export default restClient;
+// export default restClient;
